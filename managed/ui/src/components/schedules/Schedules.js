@@ -180,7 +180,7 @@ class Schedules extends Component {
       return null;
     };
 
-    let schedulesList = <span style={{padding: '10px 15px'}}>There is no data to display</span>;
+    let schedulesList = <span style={{padding: '10px 15px'}}>Fetching the data, please wait</span>;
     if (getPromiseState(schedules).isSuccess() && isNonEmptyArray(schedules.data) && getPromiseState(universeList).isSuccess()) {
       const filteredSchedules = schedules.data.filter((item) => {
         return item.taskParams.universeUUID === currentUniverse.data.universeUUID;
